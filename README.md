@@ -1,7 +1,3 @@
-Aqui está o seu documento **atualizado com o vínculo correto aos arquivos de especificação**, mantendo um padrão profissional de documentação:
-
----
-
 # 📁 Projeto Freelance — Validação de Produto (To Do List)
 
 ## Contexto Profissional
@@ -298,7 +294,7 @@ Você deve criar:
 
 ## ⏰ Prazo
 
-📌 **Entrega até o dia 27/03 às 22h20**
+📌 **Entrega até o dia 20/03 às 22h30**
 
 ⚠️ A presença está condicionada ao envio da Pull Request dentro do prazo.
 
