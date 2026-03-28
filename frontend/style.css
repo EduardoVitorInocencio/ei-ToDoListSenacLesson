@@ -1,0 +1,100 @@
+/* ===============================
+   RESET (PRONTO)
+=============================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto Mono', monospace;
+}
+
+/* ===============================
+   🎯 DESAFIO 2 (CSS)
+   👉 Criar variáveis de cor
+=============================== */
+:root {
+    /* TODO: criar cores do projeto */
+}
+
+/* ===============================
+   BODY (PRONTO)
+=============================== */
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+
+    /* TODO: adicionar background bonito */
+}
+
+/* ===============================
+   CONTAINER (BASE PRONTA)
+=============================== */
+.container {
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
+}
+
+/* ===============================
+   🎯 DESAFIO 3 (CSS)
+   👉 Estilizar HEADER
+=============================== */
+.header {
+    text-align: center;
+}
+
+/* ===============================
+   🎯 DESAFIO 4 (CSS)
+   👉 Criar layout dos CARDS
+=============================== */
+.stats {
+    margin: 20px 0;
+}
+
+/* ===============================
+   ADD TASK (BASE)
+=============================== */
+.add-task {
+    display: flex;
+    gap: 10px;
+}
+
+.add-task input {
+    flex: 1;
+    padding: 10px;
+}
+
+.btn-add {
+    cursor: pointer;
+}
+
+/* ===============================
+   🎯 DESAFIO 5 (CSS)
+   👉 Estilizar filtros
+=============================== */
+.filters {
+    margin: 20px 0;
+}
+
+/* ===============================
+   🎯 DESAFIO 6 (CSS)
+   👉 Estilizar tarefas
+=============================== */
+.tasks {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.task {
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+/* Classe importante (JS usa!) */
+.completed {
+    text-decoration: line-through;
+    opacity: 0.6;
+}

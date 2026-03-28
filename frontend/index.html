@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Configurações básicas da página ---->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Conexão antecipada com servidores de fontes (melhora performance) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Importação da fonte Roboto Mono -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+
+    <!-- Arquivo de estilos CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Título da aba do navegador -->
+    <title>ToDo List</title>
+</head>
+
+<body>
+
+    <!-- Container principal da aplicação -->
+    <main class="container">
+
+        <!-- Cabeçalho -->
+        <header class="header">
+            <h1>Todo list</h1>
+            <p>Organize suas tarefas de forma moderna e eficiente</p>
+        </header>
+
+        <!-- Seção de estatísticas -->
+        <section class="stats">
+
+            <!-- Total de tarefas -->
+            <div class="card">
+                <span class="number">3</span>
+                <span class="label">Total</span>
+            </div>
+
+            <!-- Tarefas ativas -->
+            <div class="card">
+                <span class="number blue">2</span>
+                <span class="label">Ativas</span>
+            </div>
+
+            <!-- Tarefas concluídas -->
+            <div class="card">
+                <span class="number green">1</span>
+                <span class="label">Completas</span>
+            </div>
+
+        </section>
+
+        <!-- Área para adicionar nova tarefa -->
+        <section class="add-task">
+
+            <!-- Campo de texto -->
+            <input 
+                type="text"
+                placeholder="Adicionar nova tarefa..."
+            />
+
+            <!-- Botão de adicionar -->
+            <button class="btn-add">
+                + Adicionar
+            </button>
+
+        </section>
+
+        <!-- Filtros de visualização das tarefas -->
+        <section class="filters">
+
+            <!-- Mostrar todas -->
+            <button class="filter active">
+                Todas
+            </button>
+
+            <!-- Mostrar apenas ativas -->
+            <button class="filter">
+                Ativas
+            </button>
+
+            <!-- Mostrar apenas completas -->
+            <button class="filter">
+                Completas
+            </button>
+
+        </section>
+
+        <!-- Lista de tarefas -->
+        <section class="tasks">
+
+            <!-- Tarefa concluída -->
+            <div class="task-completed">
+                <input type="checkbox" checked>
+                <span>Criar uma todo list moderna</span>
+            </div>
+
+            <!-- Tarefa ativa -->
+            <div class="task">
+                <input type="checkbox">
+                <span>Adicionar animações suaves</span>
+            </div>
+
+            <!-- Outra tarefa ativa -->
+            <div class="task">
+                <input type="checkbox">
+                <span>Tornar o design responsivo</span>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Arquivo JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+</html>
