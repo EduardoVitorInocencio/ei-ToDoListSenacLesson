@@ -1,77 +1,8 @@
-// ===============================
-// 🎯 DESAFIO 7 (JS)
-// 👉 Selecionar elementos do DOM
-// ===============================
-const input = document.querySelector("input");
-const btnAdd = document.querySelector(".btn-add");
-const tasksContainer = document.querySelector(".tasks");
-
-// ===============================
-// ESTADO
-// ===============================
-let tasks = [];
-
-
-// ===============================
-// 🎯 DESAFIO 8 (JS)
-// 👉 Criar função addTask()
-// ===============================
-function addTask() {
-
-    // 1. pegar valor do input
-
-    // 2. validar vazio
-
-    // 3. criar objeto tarefa
-    // dica: { id, text, completed }
-
-    // 4. adicionar no array
-
-    // 5. limpar input
-
-    // 6. chamar renderTasks()
-}
-
-
-// ===============================
-// 🎯 DESAFIO 9 (JS)
-// 👉 Renderizar tarefas
-// ===============================
-function renderTasks() {
-
-    // limpar container
-
-    // percorrer tasks
-
-    // criar elemento div
-
-    // adicionar checkbox + texto
-
-    // adicionar no DOM
-}
-
-
-// ===============================
-// 🎯 DESAFIO 10 (JS)
-// 👉 Marcar como concluída
-// ===============================
-// Dica: usar addEventListener("change")
-
-
-// ===============================
-// 🎯 DESAFIO 11 (JS)
-// 👉 Remover tarefa
-// ===============================
-// Dica: usar filter()
-
-
-// ===============================
-// EVENTOS
-// ===============================
-btnAdd.addEventListener("click", addTask);
-
-input.addEventListener("keypress", (e) => {
-    if (e.key === "Enter") {
-        addTask();
-    }
-});
+const form=document.querySelector(".add-task"),input=document.querySelector("#task-input"),tasksContainer=document.querySelector(".tasks"),filters=document.querySelectorAll(".filter"),message=document.querySelector(".input-message");
+const counters={total:document.querySelector("#total-count"),active:document.querySelector("#active-count"),completed:document.querySelector("#completed-count")}; let tasks=loadTasks(),currentFilter="all";
+function loadTasks(){try{return JSON.parse(localStorage.getItem("minha-listinha-tasks"))||[]}catch{return[]}} function saveTasks(){localStorage.setItem("minha-listinha-tasks",JSON.stringify(tasks))}
+function addTask(){const text=input.value.trim();if(!text){message.textContent="Escreva uma tarefinha antes de adicionar ♡";input.focus();return}tasks.unshift({id:crypto.randomUUID?crypto.randomUUID():Date.now().toString(),text,completed:false});input.value="";message.textContent="";saveTasks();renderTasks();input.focus()}
+function updateCounters(){const completed=tasks.filter(task=>task.completed).length;counters.total.textContent=tasks.length;counters.active.textContent=tasks.length-completed;counters.completed.textContent=completed}
+function renderTasks(){const visible=tasks.filter(task=>currentFilter==="all"||(currentFilter==="active"?!task.completed:task.completed));tasksContainer.replaceChildren();updateCounters();if(!visible.length){const empty=document.createElement("p");empty.className="empty-state";empty.innerHTML=`<span>${tasks.length?"🌷":"🎀"}</span>${tasks.length?"Nenhuma tarefa neste filtro.":"Nada por aqui!"}`;tasksContainer.append(empty);return}visible.forEach(task=>{const item=document.createElement("article");item.className=`task${task.completed?" completed":""}`;const checkbox=document.createElement("input");checkbox.type="checkbox";checkbox.id=`task-${task.id}`;checkbox.checked=task.completed;checkbox.setAttribute("aria-label",`Concluir: ${task.text}`);checkbox.addEventListener("change",()=>toggleTask(task.id));const label=document.createElement("label");label.htmlFor=checkbox.id;label.textContent=task.text;const remove=document.createElement("button");remove.className="delete-task";remove.type="button";remove.textContent="×";remove.setAttribute("aria-label",`Remover: ${task.text}`);remove.addEventListener("click",()=>removeTask(task.id));item.append(checkbox,label,remove);tasksContainer.append(item)})}
+function toggleTask(id){tasks=tasks.map(task=>task.id===id?{...task,completed:!task.completed}:task);saveTasks();renderTasks()} function removeTask(id){tasks=tasks.filter(task=>task.id!==id);saveTasks();renderTasks()}
+form.addEventListener("submit",event=>{event.preventDefault();addTask()});filters.forEach(button=>button.addEventListener("click",()=>{currentFilter=button.dataset.filter;filters.forEach(filter=>filter.classList.toggle("active",filter===button));renderTasks()}));input.addEventListener("input",()=>message.textContent="");renderTasks();

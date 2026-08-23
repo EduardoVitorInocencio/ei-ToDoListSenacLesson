@@ -1,13 +1,12 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Fonte -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
-
-    <!-- CSS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 
     <title>Todo List</title>
@@ -17,53 +16,36 @@
 
 <main class="container">
 
-    <!-- ===============================
-         HEADER (PRONTO)
-    =============================== -->
     <header class="header">
-        <h1>Todo List</h1>
-        <p>Organize suas tarefas</p>
+        <span class="bow bow--left" aria-hidden="true">🎀</span>
+        <span class="bow bow--right" aria-hidden="true">🎀</span>
+        <h1>Todo List <span aria-hidden="true">♡</span></h1>
     </header>
 
 
-    <!-- ===============================
-         DESAFIO 1 (HTML)
-         Aluno: deve montar os cards
-    =============================== -->
-    <section class="stats">
-
-        <!-- TODO: criar 3 cards -->
-        <!-- Dica: Total | Ativas | Completas -->
-
+    <section class="stats" aria-label="Resumo das tarefas">
+        <article class="stat-card"><span class="stat-icon" aria-hidden="true">✿</span><strong id="total-count">0</strong><span>Total</span></article>
+        <article class="stat-card"><span class="stat-icon" aria-hidden="true">♡</span><strong id="active-count">0</strong><span>Pendentes</span></article>
+        <article class="stat-card stat-card--done"><span class="stat-icon" aria-hidden="true">✓</span><strong id="completed-count">0</strong><span>Feitas</span></article>
     </section>
 
 
-    <!-- ===============================
-         ADD TASK (PRONTO)
-    =============================== -->
-    <section class="add-task">
-        <input type="text" placeholder="Nova tarefa...">
-        <button class="btn-add">Adicionar</button>
+    <form class="add-task" novalidate>
+        <label class="sr-only" for="task-input">Nova tarefa</label>
+        <input id="task-input" type="text" maxlength="120" placeholder="O que vamos fazer hoje?" autocomplete="off">
+        <button class="btn-add" type="submit"><span aria-hidden="true">+</span> Adicionar</button>
+    </form>
+    <p class="input-message" aria-live="polite"></p>
+
+
+    <section class="filters" aria-label="Filtrar tarefas">
+        <button class="filter active" type="button" data-filter="all">Todas</button>
+        <button class="filter" type="button" data-filter="active">Pendentes</button>
+        <button class="filter" type="button" data-filter="completed">Feitas</button>
     </section>
 
 
-    <!-- ===============================
-         FILTROS (PARCIAL)
-         Aluno: pode estilizar e melhorar
-    =============================== -->
-    <section class="filters">
-        <button class="filter active">Todas</button>
-        <button class="filter">Ativas</button>
-        <button class="filter">Completas</button>
-    </section>
-
-
-    <!-- ===============================
-        LISTA (PRONTA E VAZIA)
-    =============================== -->
-    <section class="tasks">
-        <!-- JS vai renderizar aqui -->
-    </section>
+    <section class="tasks" aria-live="polite"></section>
 
 </main>
 
