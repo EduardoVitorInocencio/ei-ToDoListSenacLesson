@@ -1,8 +1,8 @@
-# 📘 UI Specification – Todo List
+# UI Specification – Todo List
 
 ---
 
-## 1. 🧭 Overview
+## 1. Overview
 
 Este documento descreve a interface de uma aplicação **Todo List moderna**, com foco em:
 
@@ -13,7 +13,7 @@ Este documento descreve a interface de uma aplicação **Todo List moderna**, co
 
 ---
 
-## 2. 🖼️ Layout (Wireframe)
+## 2. Layout (Wireframe)
 
 ```
 ./assets/wireframe.png
@@ -22,7 +22,7 @@ Este documento descreve a interface de uma aplicação **Todo List moderna**, co
 
 ---
 
-## 3. 📐 Estrutura Geral
+## 3. Estrutura Geral
 
 ### Container principal
 
@@ -42,7 +42,7 @@ Este documento descreve a interface de uma aplicação **Todo List moderna**, co
 
 ---
 
-## 4. 🧩 Componentes
+## 4. Componentes
 
 ---
 
@@ -188,7 +188,7 @@ Este documento descreve a interface de uma aplicação **Todo List moderna**, co
 
 ---
 
-## 6. ✨ Interações e Efeitos
+## 6. Interações e Efeitos
 
 ### Cards
 
@@ -245,7 +245,7 @@ Mudanças:
 
 ---
 
-## 8. ⚙️ Funcionalidades
+## 8. Funcionalidades
 
 ### 8.1 Adicionar tarefa
 
@@ -278,7 +278,7 @@ Mudanças:
 
 ---
 
-## 9. 🔤 Tipografia
+## 9. Tipografia
 
 * Fonte: **Roboto Mono**
 * Estilo: moderno / técnico
@@ -286,7 +286,7 @@ Mudanças:
 
 ---
 
-## 10. 🧠 Conceito Visual
+## 10. Conceito Visual
 
 O design segue:
 
