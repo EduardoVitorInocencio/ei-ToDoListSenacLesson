@@ -1,4 +1,4 @@
-# 📁 Projeto Freelance — Validação de Produto (To Do List)
+# Projeto Freelance — Validação de Produto (To Do List)
 
 ## Contexto Profissional
 
@@ -10,11 +10,11 @@ O cliente deseja testar a seguinte hipótese:
 
 Para isso, será desenvolvido um **MVP (Minimum Viable Product)** no formato de uma aplicação **To Do List**.
 
-Este projeto será conduzido como um **ambiente profissional simulado**, com práticas reais de desenvolvimento, versionamento e colaboração.
-
 ---
 
-## 📚 Documentação do Projeto
+🎨 Figma: https://www.figma.com/design/h2JApNaTYjC15enWmehsx1/ToDo-List-%E2%80%94-Pastel-Modern-UI?t=wfZzQBL3Y9kIe12J-1
+
+## Documentação do Projeto
 
 Toda a base de planejamento e execução do projeto está centralizada na pasta:
 
@@ -24,20 +24,20 @@ Toda a base de planejamento e execução do projeto está centralizada na pasta:
 
 ### Documentos obrigatórios:
 
-* 📘 `specification/ui-specification.md`
+* `specification/ui-specification.md`
   Contém a especificação completa da interface (layout, componentes, estilos, estados e interações).
 
-* 🧭 `specification/development.md`
+* `specification/development.md`
   Contém o plano de desenvolvimento faseado, com etapas e organização do trabalho.
 
-📌 **Importante:**
+**Importante:**
 Você deve consultar esses documentos durante todo o desenvolvimento. Eles fazem parte da avaliação.
 
 ---
 
 ## Roadmap do Projeto
 
-### 🔹 Fase 1 — Estruturação e Front-end (ATUAL)
+### Fase 1 — Estruturação e Front-end (ATUAL)
 
 * Criação do repositório
 * Definição da arquitetura
@@ -46,21 +46,6 @@ Você deve consultar esses documentos durante todo o desenvolvimento. Eles fazem
 * Commits semânticos
 * Organização profissional do projeto
 
-### 🔹 Fase 2 — Backend e Persistência
-
-* PHP puro (sem frameworks)
-* MySQL
-* API básica
-* Persistência de dados
-
----
-
-## Sobre o Backend
-
-O backend será desenvolvido futuramente utilizando:
-
-* **PHP puro (Vanilla PHP)**
-* Sem frameworks como Laravel
 
 📌 Objetivo:
 
@@ -79,12 +64,6 @@ todo-list-project/
 │   ├── index.html
 │   ├── style.css
 │   ├── script.js
-│   └── README.md
-│
-├── backend/
-│   ├── index.php
-│   ├── config/
-│   │   └── database.php
 │   └── README.md
 │
 ├── specification/
@@ -110,10 +89,10 @@ A aplicação deve permitir:
 * Marcar como concluída
 * Remover tarefas
 * Filtrar tarefas:
-
   * Todas
   * Ativas
   * Completas
+    
 * Exibir contadores:
 
   * Total
@@ -125,7 +104,6 @@ A aplicação deve permitir:
 ## Requisitos Não Funcionais
 
 * Código organizado e legível
-* Separação clara entre front-end e back-end
 * Responsividade
 * Estrutura escalável
 * Boas práticas de Git
@@ -136,7 +114,6 @@ A aplicação deve permitir:
 
 * Não permitir tarefas vazias
 * Cada tarefa deve possuir:
-
   * id único
   * descrição
   * status (ativa ou completa)
@@ -254,10 +231,6 @@ Você deve criar:
 * Explicação da interface
 * Como executar
 
-### `backend/README.md`
-
-* Planejamento do backend
-
 ---
 
 ## 🧾 Templates obrigatórios
@@ -280,7 +253,7 @@ Você deve criar:
 
 ---
 
-## 📦 Entregáveis
+## Entregáveis
 
 * Repositório estruturado corretamente
 * Front-end funcional mínimo
@@ -292,15 +265,13 @@ Você deve criar:
 
 ---
 
-## ⏰ Prazo
+## Prazo
 
-📌 **Entrega até o dia 20/03 às 22h30**
-
-⚠️ A presença está condicionada ao envio da Pull Request dentro do prazo.
+📌 **Entrega até o dia 30/08 às 23h59**
 
 ---
 
 Se quiser, posso ainda:
 
 * criar os arquivos `ui-specification.md` e `development.md` já prontos pra você só colar no repo
-* ou montar um template de avaliação baseado nesses docs 👀
+* ou montar um template de avaliação baseado nesses docs
