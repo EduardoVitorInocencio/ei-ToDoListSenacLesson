@@ -13,6 +13,7 @@ Para isso, será desenvolvido um **MVP (Minimum Viable Product)** no formato de 
 ---
 
 🎨 **Figma**: https://www.figma.com/design/h2JApNaTYjC15enWmehsx1/ToDo-List-%E2%80%94-Pastel-Modern-UI?t=wfZzQBL3Y9kIe12J-1-'wqe7wq7ewq7e88877w7w88q888qq8qwq7qqqqwqqqwq7wq7wq7qwq7wqe7q7qw7qew7q7qw7qwqwq7ewq7eewq7e
+
 📙 **Notion**: https://deluxe-blue-bc1.notion.site/Single-Page-Application-SPA-3b9dfca74d8d807099afd13d35082333?pvs=73
 
 ## Documentação do Projeto
