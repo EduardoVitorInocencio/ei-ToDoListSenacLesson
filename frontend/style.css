@@ -9,11 +9,13 @@
 }
 
 /* ===============================
-   🎯 DESAFIO 2 (CSS)
-   👉 Criar variáveis de cor
+   PALETA DE CORES
 =============================== */
 :root {
-    /* TODO: criar cores do projeto */
+    --primary: #6c5cff;
+    --secondary: #8a2be2;
+    --accent: #00c9a7;
+    --white: #ffffff;
 }
 
 /* ===============================
@@ -24,17 +26,21 @@ body {
     display: flex;
     justify-content: center;
     padding: 40px 20px;
-
-    /* TODO: adicionar background bonito */
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
 }
 
 /* ===============================
-   CONTAINER (BASE PRONTA)
+   CONTAINER PRINCIPAL
 =============================== */
 .container {
     width: 100%;
-    max-width: 600px;
-    padding: 20px;
+    max-width: 700px;
+    padding: 25px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
 }
 
 /* ===============================
