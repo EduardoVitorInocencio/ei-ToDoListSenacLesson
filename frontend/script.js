@@ -192,6 +192,13 @@ elements.form.addEventListener("submit", event => {
     addTask(elements.input.value);
 });
 
+elements.input.addEventListener("keydown", event => {
+    if (event.key !== "Enter") return;
+
+    event.preventDefault();
+    addTask(elements.input.value);
+});
+
 elements.list.addEventListener("change", event => {
     if (!event.target.matches(".task-checkbox")) return;
     toggleTask(event.target.closest(".task").dataset.taskId);
