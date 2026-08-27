@@ -68,8 +68,15 @@
         </section>
 
         <footer class="app-footer">
-            <span>Feito para uma rotina mais leve.</span>
-            <span class="progress-copy" id="progress-copy">Comece adicionando sua primeira tarefa.</span>
+            <div class="progress-summary">
+                <div class="progress-meta">
+                    <span>Progresso do dia</span>
+                    <span class="progress-copy" id="progress-copy">Comece adicionando sua primeira tarefa.</span>
+                </div>
+                <div class="progress-track" role="progressbar" aria-label="Progresso das tarefas" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                    <span class="progress-bar" id="progress-bar"></span>
+                </div>
+            </div>
         </footer>
     </main>
 

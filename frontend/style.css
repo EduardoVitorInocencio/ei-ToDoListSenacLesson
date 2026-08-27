@@ -124,8 +124,12 @@ button { -webkit-tap-highlight-color: transparent; }
 .empty-icon { display: grid; width: 50px; height: 50px; margin: 0 auto 12px; place-items: center; border-radius: 16px; background: rgba(108,92,255,.08); color: var(--primary); font-size: 22px; }
 .empty-state h3 { margin-bottom: 7px; color: var(--text); font-size: 14px; }
 .empty-state p { max-width: 390px; margin: auto; font-size: 11px; line-height: 1.7; }
-.app-footer { display: flex; justify-content: space-between; gap: 16px; margin-top: 16px; color: rgba(255,255,255,.7); font-size: 10px; line-height: 1.5; }
+.app-footer { margin-top: 16px; color: rgba(255,255,255,.75); font-size: 10px; line-height: 1.5; }
+.progress-summary { width: 100%; }
+.progress-meta { display: flex; justify-content: space-between; gap: 16px; margin-bottom: 7px; }
 .progress-copy { text-align: right; }
+.progress-track { height: 7px; overflow: hidden; border: 1px solid rgba(255,255,255,.24); border-radius: 999px; background: rgba(38,24,77,.16); }
+.progress-bar { display: block; width: 0; height: 100%; border-radius: inherit; background: linear-gradient(90deg, #57e4ce, #fff); box-shadow: 0 0 14px rgba(87,228,206,.5); transition: width .35s ease; }
 
 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
 button:focus-visible, input:focus-visible { outline: 3px solid rgba(255,255,255,.82); outline-offset: 3px; }
@@ -147,7 +151,7 @@ button:focus-visible, input:focus-visible { outline: 3px solid rgba(255,255,255,
     .task-panel-header { align-items: flex-start; flex-direction: column; }
     .filters { width: 100%; }
     .filter { flex: 1; }
-    .app-footer { align-items: center; flex-direction: column; text-align: center; }
+    .progress-meta { align-items: center; flex-direction: column; gap: 3px; text-align: center; }
     .progress-copy { text-align: center; }
 }
 

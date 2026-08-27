@@ -10,7 +10,9 @@ const elements = {
     totalCount: document.querySelector("#total-count"),
     activeCount: document.querySelector("#active-count"),
     completedCount: document.querySelector("#completed-count"),
-    progressCopy: document.querySelector("#progress-copy")
+    progressCopy: document.querySelector("#progress-copy"),
+    progressBar: document.querySelector("#progress-bar"),
+    progressTrack: document.querySelector(".progress-track")
 };
 
 let tasks = loadTasks();
@@ -23,12 +25,18 @@ function loadTasks() {
 
         if (!Array.isArray(savedTasks)) return [];
 
-        return savedTasks.filter(task => (
-            task
-            && typeof task.id === "string"
-            && typeof task.text === "string"
-            && typeof task.completed === "boolean"
-        ));
+        return savedTasks
+            .filter(task => task && typeof task.id === "string")
+            .map(task => ({
+                id: task.id,
+                description: typeof task.description === "string" ? task.description : task.text,
+                status: task.status || (task.completed ? "completed" : "active"),
+                createdAt: task.createdAt || new Date().toISOString()
+            }))
+            .filter(task => (
+                typeof task.description === "string"
+                && ["active", "completed"].includes(task.status)
+            ));
     } catch {
         return [];
     }
@@ -68,8 +76,8 @@ function addTask(text) {
 
     tasks.unshift({
         id: createId(),
-        text: normalizedText,
-        completed: false,
+        description: normalizedText,
+        status: "active",
         createdAt: new Date().toISOString()
     });
 
@@ -83,7 +91,7 @@ function addTask(text) {
 function toggleTask(taskId) {
     tasks = tasks.map(task => (
         task.id === taskId
-            ? { ...task, completed: !task.completed }
+            ? { ...task, status: task.status === "completed" ? "active" : "completed" }
             : task
     ));
 
@@ -98,17 +106,17 @@ function removeTask(taskId) {
     render();
 
     if (taskToRemove) {
-        showFeedback(`Tarefa "${taskToRemove.text}" removida.`);
+        showFeedback(`Tarefa "${taskToRemove.description}" removida.`);
     }
 }
 
 function getFilteredTasks() {
     if (currentFilter === "active") {
-        return tasks.filter(task => !task.completed);
+        return tasks.filter(task => task.status === "active");
     }
 
     if (currentFilter === "completed") {
-        return tasks.filter(task => task.completed);
+        return tasks.filter(task => task.status === "completed");
     }
 
     return tasks;
@@ -116,24 +124,25 @@ function getFilteredTasks() {
 
 function createTaskElement(task) {
     const item = document.createElement("article");
-    item.className = `task${task.completed ? " completed" : ""}`;
+    const isCompleted = task.status === "completed";
+    item.className = `task${isCompleted ? " completed" : ""}`;
     item.dataset.taskId = task.id;
 
     const checkbox = document.createElement("input");
     checkbox.className = "task-checkbox";
     checkbox.type = "checkbox";
-    checkbox.checked = task.completed;
-    checkbox.setAttribute("aria-label", `${task.completed ? "Reabrir" : "Concluir"} tarefa: ${task.text}`);
+    checkbox.checked = isCompleted;
+    checkbox.setAttribute("aria-label", `${isCompleted ? "Reabrir" : "Concluir"} tarefa: ${task.description}`);
 
     const description = document.createElement("span");
     description.className = "task-text";
-    description.textContent = task.text;
+    description.textContent = task.description;
 
     const deleteButton = document.createElement("button");
     deleteButton.className = "delete-task";
     deleteButton.type = "button";
     deleteButton.dataset.action = "delete";
-    deleteButton.setAttribute("aria-label", `Remover tarefa: ${task.text}`);
+    deleteButton.setAttribute("aria-label", `Remover tarefa: ${task.description}`);
     deleteButton.title = "Remover tarefa";
     deleteButton.textContent = "✕";
 
@@ -142,12 +151,16 @@ function createTaskElement(task) {
 }
 
 function updateStats() {
-    const completed = tasks.filter(task => task.completed).length;
+    const completed = tasks.filter(task => task.status === "completed").length;
     const active = tasks.length - completed;
 
     elements.totalCount.textContent = tasks.length;
     elements.activeCount.textContent = active;
     elements.completedCount.textContent = completed;
+
+    const percentage = tasks.length === 0 ? 0 : Math.round((completed / tasks.length) * 100);
+    elements.progressBar.style.width = `${percentage}%`;
+    elements.progressTrack.setAttribute("aria-valuenow", String(percentage));
 
     if (tasks.length === 0) {
         elements.progressCopy.textContent = "Comece adicionando sua primeira tarefa.";
@@ -159,7 +172,6 @@ function updateStats() {
         return;
     }
 
-    const percentage = Math.round((completed / tasks.length) * 100);
     elements.progressCopy.textContent = `${percentage}% concluído • ${active} ${active === 1 ? "tarefa pendente" : "tarefas pendentes"}`;
 }
 
