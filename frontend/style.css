@@ -52,11 +52,50 @@ body {
 }
 
 /* ===============================
-   🎯 DESAFIO 4 (CSS)
-   👉 Criar layout dos CARDS
+   CARDS DE ESTATÍSTICAS
 =============================== */
 .stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
     margin: 20px 0;
+}
+
+.card {
+    flex: 1;
+    min-width: 100px;
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.12);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    color: var(--white);
+    text-align: center;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-6px) scale(1.02);
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
+}
+
+.number {
+    display: block;
+    font-size: 26px;
+    font-weight: 700;
+}
+
+.card:last-child .number {
+    color: var(--accent);
+}
+
+.label {
+    display: block;
+    margin-top: 6px;
+    opacity: 0.75;
 }
 
 /* ===============================
