@@ -1,81 +1,78 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Fonte -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
-
-    <!-- CSS -->
+    <meta name="description" content="Organize suas tarefas de forma simples, rápida e eficiente.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-
-    <title>Todo List</title>
+    <title>Todo List | Organize seu dia</title>
 </head>
-
 <body>
+    <div class="background-orb orb-one" aria-hidden="true"></div>
+    <div class="background-orb orb-two" aria-hidden="true"></div>
 
-<main class="container">
+    <main class="container">
+        <header class="header">
+            <span class="eyebrow">Meu espaço produtivo</span>
+            <h1>Todo List</h1>
+            <p>Pequenos passos, grandes conquistas. Organize o que importa hoje.</p>
+        </header>
 
-    <!-- ===============================
-         HEADER (PRONTO)
-    =============================== -->
-    <header class="header">
-        <h1>Todo List</h1>
-        <p>Organize suas tarefas</p>
-    </header>
+        <section class="stats" aria-label="Resumo das tarefas">
+            <article class="card card-total">
+                <span class="card-icon" aria-hidden="true">◇</span>
+                <span class="number" id="total-count">0</span>
+                <span class="label">Total</span>
+            </article>
+            <article class="card card-active">
+                <span class="card-icon" aria-hidden="true">○</span>
+                <span class="number" id="active-count">0</span>
+                <span class="label">Ativas</span>
+            </article>
+            <article class="card card-completed">
+                <span class="card-icon" aria-hidden="true">✓</span>
+                <span class="number" id="completed-count">0</span>
+                <span class="label">Completas</span>
+            </article>
+        </section>
 
+        <form class="add-task" id="task-form">
+            <label class="sr-only" for="task-input">Descrição da nova tarefa</label>
+            <input id="task-input" name="task" type="text" maxlength="120" placeholder="O que você precisa fazer?" autocomplete="off" required>
+            <button class="btn-add" type="submit"><span aria-hidden="true">+</span> Adicionar</button>
+        </form>
+        <div class="feedback" id="feedback" role="status" aria-live="polite"></div>
 
-    <!-- ===============================
-         ESTATÍSTICAS
-    =============================== -->
-    <section class="stats">
-        <div class="card">
-            <span class="number">0</span>
-            <span class="label">Total</span>
-        </div>
+        <section class="task-panel" aria-labelledby="task-list-title">
+            <div class="task-panel-header">
+                <div>
+                    <span class="section-kicker">Sua rotina</span>
+                    <h2 id="task-list-title">Tarefas</h2>
+                </div>
+                <nav class="filters" aria-label="Filtrar tarefas">
+                    <button class="filter active" type="button" data-filter="all" aria-pressed="true">Todas</button>
+                    <button class="filter" type="button" data-filter="active" aria-pressed="false">Ativas</button>
+                    <button class="filter" type="button" data-filter="completed" aria-pressed="false">Completas</button>
+                </nav>
+            </div>
 
-        <div class="card">
-            <span class="number">0</span>
-            <span class="label">Ativas</span>
-        </div>
+            <div class="tasks" id="task-list" aria-live="polite"></div>
+            <div class="empty-state" id="empty-state">
+                <span class="empty-icon" aria-hidden="true">✦</span>
+                <h3>Nenhuma tarefa por aqui</h3>
+                <p>Adicione uma tarefa acima e comece a transformar planos em progresso.</p>
+            </div>
+        </section>
 
-        <div class="card">
-            <span class="number">0</span>
-            <span class="label">Completas</span>
-        </div>
-    </section>
+        <footer class="app-footer">
+            <span>Feito para uma rotina mais leve.</span>
+            <span class="progress-copy" id="progress-copy">Comece adicionando sua primeira tarefa.</span>
+        </footer>
+    </main>
 
-
-    <!-- ===============================
-         ADD TASK (PRONTO)
-    =============================== -->
-    <section class="add-task">
-        <input type="text" placeholder="Nova tarefa...">
-        <button class="btn-add">Adicionar</button>
-    </section>
-
-
-    <!-- ===============================
-         FILTROS (PARCIAL)
-         Aluno: pode estilizar e melhorar
-    =============================== -->
-    <section class="filters">
-        <button class="filter active">Todas</button>
-        <button class="filter">Ativas</button>
-        <button class="filter">Completas</button>
-    </section>
-
-
-    <!-- ===============================
-        LISTA (PRONTA E VAZIA)
-    =============================== -->
-    <section class="tasks">
-        <!-- JS vai renderizar aqui -->
-    </section>
-
-</main>
-
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
