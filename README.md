@@ -43,6 +43,16 @@ O projeto aplica fundamentos de HTML semântico, CSS responsivo, manipulação d
 
 Não é necessário instalar dependências ou executar um servidor.
 
+## Evidências
+
+### Desktop
+
+![Todo List em uma tela desktop](docs/evidence/todo-list-desktop.png)
+
+### Mobile
+
+![Todo List em uma tela mobile](docs/evidence/todo-list-mobile.png)
+
 ## Referências do projeto
 
 - [Planejamento no Notion](https://deluxe-blue-bc1.notion.site/Single-Page-Application-SPA-3b9dfca74d8d807099afd13d35082333?pvs=73)

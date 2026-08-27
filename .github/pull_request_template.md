@@ -34,7 +34,10 @@ Descreva resumidamente o que foi desenvolvido e as principais decisões tomadas.
 
 ## Evidências
 
-Adicione prints e, opcionalmente, GIF ou vídeo das interações.
+- [Visualização desktop](../docs/evidence/todo-list-desktop.png)
+- [Visualização mobile](../docs/evidence/todo-list-mobile.png)
+
+Adicione, opcionalmente, um GIF ou vídeo das interações.
 
 ## Checklist
 

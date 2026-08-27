@@ -14,6 +14,8 @@ Abra o arquivo `index.html` em um navegador moderno. A aplicação funciona sem 
 
 As tarefas ficam armazenadas no `localStorage` do navegador utilizado. Por isso, elas permanecem disponíveis depois que a página é fechada ou atualizada.
 
+Cada tarefa possui um identificador único, uma descrição e um status (`active` ou `completed`). A interface e a barra de progresso são atualizadas imediatamente após qualquer alteração.
+
 ## Uso
 
 1. Digite a descrição no campo principal e pressione **Adicionar** ou **Enter**.
