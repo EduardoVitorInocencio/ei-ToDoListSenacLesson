@@ -2,7 +2,7 @@
 
 ## Identificação
 
-- **Nome completo:** Ricardo Junior
+- **Integrantes:** Ricardo Junior e Francisco Iranildo
 - **Turma:** PREENCHER
 - **RA:** PREENCHER
 - **Data:** PREENCHER
